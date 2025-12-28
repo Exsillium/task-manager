@@ -116,12 +116,12 @@ backend/
 ## 📸 Screenshots
 
 **Register Page**  
-![Register](frontend/screenshots/register.png)
+![Register](frontend/screenshots/Register.png)
 
 **Login Page**  
-![Login](frontend/screenshots/login.png)
+![Login](frontend/screenshots/Login.png)
 
 **Tasks Page**  
-![Tasks](frontend/screenshots/tasks.png)
+![Tasks](frontend/screenshots/Tasks.png)
 
 
