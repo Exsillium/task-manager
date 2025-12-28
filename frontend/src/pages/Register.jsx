@@ -2,22 +2,15 @@ import { useState } from "react";
 import api from "../api/api";
 
 function Register() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+  const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
-    setSuccess("");
+    setError(""); setSuccess("");
 
     try {
       await api.post("/auth/register", form);
@@ -29,39 +22,47 @@ function Register() {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {success && <p style={{ color: "green" }}>{success}</p>}
-
+    <div className="card p-4 shadow-sm mx-auto" style={{ maxWidth: "400px" }}>
+      <h3 className="mb-3">Register</h3>
+      {error && <div className="alert alert-danger">{error}</div>}
+      {success && <div className="alert alert-success">{success}</div>}
       <form onSubmit={handleSubmit}>
-        <input
-          name="name"
-          placeholder="Name"
-          value={form.name}
-          onChange={handleChange}
-        />
-        <br />
-
-        <input
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-        />
-        <br />
-
-        <input
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={form.password}
-          onChange={handleChange}
-        />
-        <br />
-
-        <button type="submit">Register</button>
+        <div className="mb-3">
+          <input
+            type="text"
+            name="name"
+            className="form-control"
+            placeholder="Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <input
+            type="email"
+            name="email"
+            className="form-control"
+            placeholder="Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <input
+            type="password"
+            name="password"
+            className="form-control"
+            placeholder="Password"
+            value={form.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit" className="btn btn-success w-100">
+          Register
+        </button>
       </form>
     </div>
   );
