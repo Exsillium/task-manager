@@ -116,14 +116,12 @@ backend/
 ## 📸 Screenshots
 
 **Register Page**  
-![Register](screenshots/register.png)
+![Register](frontend/screenshots/register.png)
 
 **Login Page**  
-![Login](screenshots/login.png)
+![Login](frontend/screenshots/login.png)
 
 **Tasks Page**  
-![Tasks](screenshots/tasks.png)
-
-> (Take screenshots from browser and place in `frontend/screenshots/` folder)
+![Tasks](frontend/screenshots/tasks.png)
 
 
